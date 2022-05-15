@@ -32,9 +32,7 @@ const Header = () => {
                   <NavItem>
                     <NavLink tag={Link} className="text-white" to="/signin">Signin</NavLink>
                   </NavItem></>)
-            }
-          
-          
+            } 
         </Nav>
         </Collapse>
     </Navbar>

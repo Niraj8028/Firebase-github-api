@@ -14,10 +14,11 @@ import PageNotFound from './Pages/PageNotFound'
 import { UserContext } from './Context/UserContext'
 import Footer from './Layout/Footer'
 import Header from './Layout/Header'
+import firebaseConfig from "./Config/FirebaseConfig"
 
+firebase.initializeApp(firebaseConfig)
 
-
-const App = () => {
+const App =() => {
   const [user, setUser] = useState(null);
 
   return (
