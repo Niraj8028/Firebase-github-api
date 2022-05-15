@@ -13,6 +13,7 @@ import Signup from './Pages/Signup'
 import PageNotFound from './Pages/PageNotFound'
 import { UserContext } from './Context/UserContext'
 import Footer from './Layout/Footer'
+import Header from './Layout/Header'
 
 
 
@@ -23,7 +24,7 @@ const App = () => {
     <Router>
       <ToastContainer />
       <UserContext.Provider value={{ user, setUser }}>
-      
+      <Header/>
       <Routes>     
         <Route path="/" element={<Home/>}/>
         <Route path="/signin" element={<Signin/>}/>
