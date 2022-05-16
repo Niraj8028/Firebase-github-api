@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.min.css'
 import { ToastContainer } from "react-toastify"
 
-import firebase from "firebase/app"
+import firebase from "firebase/compat/app"
 import 'firebase/auth'
 
 import Home from './Pages/Home'
