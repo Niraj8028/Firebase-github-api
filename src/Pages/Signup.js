@@ -1,11 +1,12 @@
 import React,{useState,useContext} from 'react'
-import firebase from "firebase/compat/app"
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
 import {
   Container,Form,Button,FormGroup,Label,Col,Input,Row,Card,CardBody,CardFooter,CardHeader
 } from "reactstrap"
 import { UserContext } from '../Context/UserContext'
-import {toast, ToastContainer} from "react-toastify"
-
+import {toast} from "react-toastify"
+import {Navigate} from "react-router-dom"
 
 
 const Signup=()=> {
@@ -13,21 +14,31 @@ const Signup=()=> {
   const[password,setPassword]=useState("")
   const userContext=useContext(UserContext)
   
-
-  
+ 
 
   const handleSignup=()=>{
     firebase
     .auth()
     .createUserWithEmailAndPassword(email,password)
-    .then(res=>)
+    .then(res=>{
+      console.log(res)
+      userContext.setUser({email:res.user.email,uid:res.user.uid});
+    })
     .catch(error=>{
       console.log(error)
       toast(error.message,{
         type:"error"
       })
     })
+  }
 
+    const handleFormSubmit=(e)=>{
+      e.preventDefault();
+      handleSignup();
+  
+  }
+  if(userContext.user?.uid){
+    return <Navigate to="/"/>
   }
   return (
 		<Container className='text-center'>

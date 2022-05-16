@@ -27,7 +27,7 @@ const Header = () => {
                 userContext.user?(<><NavItem>
                     <NavLink tag={Link} className="text-white" to="/">Logout</NavLink>
                   </NavItem></>):(<><NavItem>
-                    <NavLink tag={Link} className="text-white" to="/signout">Signup</NavLink>
+                    <NavLink tag={Link} className="text-white" to="/signup">Signup</NavLink>
                   </NavItem>
                   <NavItem>
                     <NavLink tag={Link} className="text-white" to="/signin">Signin</NavLink>
