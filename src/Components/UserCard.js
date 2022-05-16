@@ -1,20 +1,22 @@
-import React from 'react'
-import {Card,CardBody,CardText} from "reactstrap"
+import React from "react";
+import { Card, CardBody } from "reactstrap";
 
-const UserCard=({user})=>{
+const UserCard = ({ user }) => {
   return (
-    <Card className='text-center mt-3'>
-        <img src='user.https://avatars.githubusercontent.com/u/87138587?v=4' className='img-thumbnail'/>
-        <CardBody>
-            <Div className='text-primary'>{user.name}</Div>
-            <Div className='text-primary'>{user.location}</Div>
-            <Div className='text-primary'>{user.bio}</Div>
-            <Div className='text-info'>{user.public_repos}</Div>
-            <Div className='text-info'>{user.followers}</Div>
-            <Div className='text-info'>{user.following}</Div>
-        </CardBody>
+    <Card className="text-center mt-3 mb-4">
+      <img src={user.avatar_url} className="img-thumbnail" />
+      <CardBody>
+        <div className="text-primary">{user.name}</div>
+        <div className="text-primary">{user.location}</div>
+        <div className="text-primary">{user.bio}</div>
+        <div className="text-info">
+          Available for hire: {user.hireable ? "YES" : "NOPE"}
+        </div>
+        <div className="text-info">Followers : {user.followers}</div>
+        <div className="text-info">Following : {user.following}</div>
+      </CardBody>
     </Card>
-  )
-}
+  );
+};
 
-export default UserCard
+export default UserCard;
