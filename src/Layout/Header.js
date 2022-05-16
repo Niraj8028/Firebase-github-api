@@ -25,12 +25,14 @@ const Header = () => {
         <Nav className='ms-auto' navbar>
             {
                 userContext.user?(<><NavItem>
-                    <NavLink tag={Link} className="text-white" to="/">Logout</NavLink>
+                    <NavLink onClick={()=>{
+                      userContext.setUser(null);
+                    }}>Logout</NavLink>
                   </NavItem></>):(<><NavItem>
                     <NavLink tag={Link} className="text-white" to="/signup">Signup</NavLink>
                   </NavItem>
                   <NavItem>
-                    <NavLink tag={Link} className="text-white" to="/signin">Signin</NavLink>
+                    <NavLink tag={Link} className="text-white" to="/signin"> Signin </NavLink>
                   </NavItem></>)
             } 
         </Nav>
